@@ -1,0 +1,38 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#og {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    background-color: green;
+
+
+}
+
+.navleft {
+  
+    background-color: yellow;
+
+    width: 300px;
+    height: 500px;
+    z-index: 10000;
+    top: 0px;
+    position: -webkit-sticky;
+    position: sticky;
+
+ 
+
+}
+
+#main-doc {
+    position: relative;
+    border: solid black ;
+    width: 100%;
+    height: 4000px;
+
+
+}
