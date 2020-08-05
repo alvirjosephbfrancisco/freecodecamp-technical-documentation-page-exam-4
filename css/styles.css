@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     padding: 0px;
+    font-family: 'Poppins', sans-serif;
 }
 
 #og {
@@ -8,31 +9,176 @@ body {
     height: 100%;
     position: relative;
     display: flex;
-    background-color: green;
+    background-color: ;
+}
+
+.checks {
+    position: fixed;
+    z-index: 6;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    opacity: .01%;
+}
+
+.lines {
+    position: fixed;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    justify-items: center;
+    align-items: center;
+ z-index: 5;
+ top: 3px;
+ left: 4px;
+}
+/*------------------------------
+HAMBURGER MENU LINES
+---------------------------------------*/
+.lines > div{
+    position: relative;
+    width: 100%;
+    height: 10px;
+ background-color: darkgrey;
+ z-index: 6;
+ margin: auto 4px;
+ transition: all 0.4s ease;
+ transition: all 0.4s ease;
+}
+
+.lines > div:before {
+    position: absolute;
+ content:"";
+    width: 100%;
+    height: 10px;
+    top: -15px;
+ background-color: inherit;
+ z-index: 6;
+}
+
+.lines > div:after {
+    position: absolute;
+    content:"";
+       width: 100%;
+       height: 10px;
+       top: 15px;
+    background-color: inherit;
+    z-index: 7; 
+}
 
 
+
+/*---------------------------------------------------------------------*/
+.navbars h1 {
+    margin-left: 70px;
 }
 
 .navleft {
-  
-    background-color: yellow;
-
-    width: 300px;
-    height: 500px;
-    z-index: 10000;
+    background-color: ;
+    width: 400px;
+    display: block;
+    height: 1000px;
+    z-index: 1;
     top: 0px;
     position: -webkit-sticky;
     position: sticky;
 
- 
+}
+
+.navleft div nav li{
+    height: 50px;
+    border-top: solid 1px;
+    margin: 5px auto;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+}
+
+.navleft div nav li a {
+    margin: auto;
+    font-style: normal;
+    text-decoration: none;
+
+
 
 }
 
 #main-doc {
     position: relative;
-    border: solid black ;
+    border-left: solid black ;
     width: 100%;
     height: 4000px;
+}
 
 
+
+
+
+
+@media screen and (max-width: 750px) {
+    #main-doc {
+        padding-top: 100px;
+     
+    }
+
+    #og {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navleft {
+        width: 100%;
+        height: fit-content;
+        position: fixed;
+        background-color: orange;
+    }
+
+    #main-doc {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+.title {
+    background-color: orange;
+    padding: .5px;
+}
+
+/*----- nav will show and hide ---- */
+    .navs {
+        display: none;
+    }
+
+    
+    #og .checks:checked ~ div.navleft  > .navs {
+        display: block;
+    }
+
+
+
+    #og .checks:checked ~ #main-doc {
+        padding-top: 700px;
+    }
+
+    #og .checks:checked ~ .lines {
+        position: fixed;
+    }
+    #og .checks:checked ~ .navleft {
+        position:fixed;
+     }
+     
+    /*---------------------- ANIMATION hamburger --------------------------*/
+    #og .checks:checked ~ .lines > div{
+        transform: rotate(135deg);
+    }
+    
+    #og .checks:checked ~ .lines > div:before,
+    #og .checks:checked ~ .lines > div:after
+    {
+        transform: rotate(90deg);
+        top: 0px
+    } 
+
+     
 }
